@@ -51,8 +51,17 @@ function SubForm (){
     <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" placeholder="e.g., 0412345678" required>
     <br>
     <br>
+    <label for="education">Education level</label>
+    <select id="education" name="education">
+      <option value="">Select your education level</option>
+      <option value="high-school">High School</option>
+      <option value="undergraduate">Undergraduate</option>
+      <option value="graduate">Graduate</option>
+      <option value="doctorate">Doctorate</option>
+      <br>
+      <br>
     <label for="course">Subject Course:</label>
-    <input type="text" id="course" name="course" required>
+    <input type="text" id="course" name="course" placeholder="e.g., Information Technology"required>
     <br/>
     <br/>
   </form>
