@@ -1,68 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>User Registration Form - Contact Form</title>
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-<script>
-function SubForm (){
-    $.ajax({
-        url:'https://api.apispreadsheets.com/data/Jj0FtFvy3ehB0pDr/',
-        type:'post',
-        data:$("#myForm").serializeArray(),
-        success: function(){
-          alert("Form Data Submitted :)")
-        },
-        error: function(){
-          alert("There was an error :(")
-        }
-    });
-}
-</script>
+<title>Registration Form</title>
+<link rel="stylesheet" href="styles.css">
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+	<script>
+		function SubForm (){
+			$.ajax({
+				url:"https://api.apispreadsheets.com/data/qINRVDMnLNWcxlo8/",
+				type:"post",
+				data:$("#myForm").serializeArray(),
+				success: function(){
+					alert("Form Data Submitted :)")
+				},
+				error: function(){
+					alert("There was an error :(")
+				}
+			});
+		}
+	</script>
 </head>
 <body>
-  <h1>User Registration Form</h1>
-  <form id="myForm">
-    <label for="firstName">First Name:</label>
-    <input type="text" id="firstName" name="firstName" required><br><br>
-    
-    <label for="lastName">Last Name:</label>
-    <input type="text" id="lastName" name="lastName" required><br><br>
-    <label for="email">Email:</label>
-    <input name="email" />
-    <br/>
-    <br/>
-    <label for="age">Age:</label>
-    <input type="number" id="age" name="age" required>
-    <br/>
-    <br/>
-    <label for="gender">Gender:</label>
-    <select id="gender" name="gender" required>
-      <option value="">Select Gender</option>
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-      <option value="other">Other</option>
-    </select>
-    <br>
-    <br>
-    <label for="phoneNumber">Phone Number (Australia):</label>
-    <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" placeholder="e.g., 0412345678" required>
-    <br>
-    <br>
-    <label for="education">Education level</label>
-    <select id="education" name="education">
-      <option value="">Select your education level</option>
-      <option value="high-school">High School</option>
-      <option value="undergraduate">Undergraduate</option>
-      <option value="graduate">Graduate</option>
-      <option value="doctorate">Doctorate</option>
-      <br>
-      <br>
-    <label for="course">Subject Course:</label>
-    <input type="text" id="course" name="course" required>
-    <input type="text" id="course" name="course" placeholder="e.g., Information Technology"required>
-    <br/>
-    <br/>
-  </form>
+    <div class="wrapper">
+        <div class="title">
+	    <form id="myForm">
+        <h1> Registration Form</h1>
+        </div>
+        <br>
+        <div class="form"> 
+            <div class="inputfield">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+		    </div>
+            <br/>
+            <div class="inputfield">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+		    <br/>
+            <div class="inputfield">
+                <label for="email">Email:</label>
+                <input type='string' id='email' name="email" required/>
+            </div>
+		    <br/>
+            <div class="inputfield">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <br/>
+            <div class="inputfield">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                  <option value="">Select Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+            </div>
+		    <br/>
+            <div class="inputfield">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" placeholder="e.g., 0412345678" required>		
+            </div>
+            <br/>
+            <div class="inputfield">
+                <label for="education">Education level: </label>
+                <select id="education" name="education level">
+                 <option value="">Select your education level </option>
+                 <option value="high-school">High School</option>
+                 <option value="undergraduate">Undergraduate</option>
+                 <option value="graduate">Graduate</option>
+                 <option value="doctorate">Doctorate</option>
+                </select> 
+            </div>
+            <br/>
+		    <div class="inputfield">
+                <label for="course">Subject Course:</label>
+                <input type="text" id="course" name="course" placeholder="e.g., Marketing" required>
+            </div>
+		    <br/>
+	    </form>
+	    <button onclick='SubForm()'>Submit</button>
+</body>
+</html>
