@@ -1,8 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Registration Form</title>
-<link rel="stylesheet" href="styles.css">
+	<title>User Registration Form</title>
+    <style>
+        body {
+            background-color: #fec107;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #000000;
+            font-size: 24px;
+            margin-top: 50px;
+            font-family: "Amasis MT Pro Black", sans-serif;
+        }
+        
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        label {
+            display: block;
+            text-align: justify;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 	<script
 		src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -10,7 +61,7 @@
 	<script>
 		function SubForm (){
 			$.ajax({
-				url:"https://api.apispreadsheets.com/data/qINRVDMnLNWcxlo8/",
+				url:"https://api.apispreadsheets.com/data/AGH5sMosJ8j6pvF9/",
 				type:"post",
 				data:$("#myForm").serializeArray(),
 				success: function(){
@@ -24,65 +75,33 @@
 	</script>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="title">
-	    <form id="myForm">
-        <h1> Registration Form</h1>
-        </div>
-        <br>
-        <div class="form"> 
-            <div class="inputfield">
-                <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="firstName" required>
-		    </div>
-            <br/>
-            <div class="inputfield">
-                <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="lastName" required>
-            </div>
-		    <br/>
-            <div class="inputfield">
-                <label for="email">Email:</label>
-                <input type='string' id='email' name="email" required/>
-            </div>
-		    <br/>
-            <div class="inputfield">
-                <label for="age">Age:</label>
-                <input type="number" id="age" name="age" required>
-            </div>
-            <br/>
-            <div class="inputfield">
-                <label for="gender">Gender:</label>
-                <select id="gender" name="gender" required>
-                  <option value="">Select Gender</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="other">Other</option>
-                </select>
-            </div>
-		    <br/>
-            <div class="inputfield">
-                <label for="phoneNumber">Phone Number:</label>
-                <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" placeholder="e.g., 0412345678" required>		
-            </div>
-            <br/>
-            <div class="inputfield">
-                <label for="education">Education level: </label>
-                <select id="education" name="education level">
-                 <option value="">Select your education level </option>
-                 <option value="high-school">High School</option>
-                 <option value="undergraduate">Undergraduate</option>
-                 <option value="graduate">Graduate</option>
-                 <option value="doctorate">Doctorate</option>
-                </select> 
-            </div>
-            <br/>
-		    <div class="inputfield">
-                <label for="course">Subject Course:</label>
-                <input type="text" id="course" name="course" placeholder="e.g., Marketing" required>
-            </div>
-		    <br/>
-	    </form>
-	    <button onclick='SubForm()'>Submit</button>
+	<form id="myForm">
+		<h1>User Registration Form</h1>
+    <form id="myForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+    
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+       
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required>
+       
+        <label for="program">Program:</label>
+        <input type="text" id="program" name="program" required>
+
+        
+    </form>
+    <button onclick='SubForm()'>Submit</button>
 </body>
 </html>
